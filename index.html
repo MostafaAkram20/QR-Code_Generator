@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="info">
+        <div class="whatsApp">
+            <a href="https://wa.me/01028448515" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/mostafa-akram-mohamed/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="githup">
+            <a href="https://github.com/MostafaAkram20" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="container">
+            <h1>QR Code Generator</h1>
+            <div class="qr-form">
+                <input type="url" id="urlInput" value="https://" placeholder="Example: https://www.google.com" required>
+                <button id="generateBtn">Generate QR Code</button>
+            </div>
+            <div id="qrResult" class="qr-result">
+                <div class="placeholder">
+                    QR code image will be displayed here
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
