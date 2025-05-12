@@ -323,29 +323,7 @@ button:active {
     animation: fadeIn 0.5s ease-out;
 }
 
-.download-btn {
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, #0f498f 0%, #062f6d 100%);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(15, 73, 143, 0.2);
-    margin-top: 1rem;
-    width: 100%;
-}
 
-.download-btn:hover {
-    box-shadow: 0 6px 20px rgba(15, 73, 143, 0.3);
-    transform: translateY(-2px);
-}
-
-.download-btn:active {
-    transform: scale(0.95);
-}
 
 /* Custom Alert Styles */
 .custom-alert {
