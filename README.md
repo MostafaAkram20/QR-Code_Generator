@@ -21,19 +21,6 @@ A modern, responsive web application that generates QR codes from URLs. Built wi
 - QR Server API for QR code generation
 - Font Awesome for icons
 
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/qr-code-generator.git
-```
-
-2. Open the project folder:
-```bash
-cd qr-code-generator
-```
-
-3. Open `index.html` in your web browser
 
 ## Usage
 
@@ -72,10 +59,6 @@ cd qr-code-generator
 - WhatsApp: [+0201028448515](https://wa.me/+0201028448515)
 - GitHub: [MostafaAkram20](https://github.com/MostafaAkram20)
 - Email: mostafaakrm7@gmail.com
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Contributing
 
