@@ -286,29 +286,49 @@ button:active {
 }
 
 .loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #0f498f;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: none;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin: 20px auto;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
+.loader::before,
+.loader::after,
+.loader span {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    border-radius: 50%;
+    animation: pulse 1.4s ease-in-out infinite;
+}
 
-    100% {
-        transform: rotate(360deg);
+.loader::before {
+    animation-delay: 0s;
+}
+
+.loader span {
+    animation-delay: 0.2s;
+}
+
+.loader::after {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
 .loading .loader {
-    display: block;
+    display: flex;
+    margin: 0 auto;
 }
 
 .loading .qr-code {
@@ -316,10 +336,7 @@ button:active {
 }
 
 .qr-code {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
+    transition: all 0.3s ease;
     animation: fadeIn 0.5s ease-out;
 }
 

@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('lastGeneratedUrl', url);
 
             // Show loading state
-            qrResult.innerHTML = '<div class="loader"></div>';
+            qrResult.innerHTML = '<div class="loader"><span></span></div>';
             qrResult.classList.add('loading');
 
             // Generate QR code after 2 seconds
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 qrResult.innerHTML = qrCodeHTML;
                 qrResult.classList.remove('loading');
                 localStorage.setItem('lastQRResult', qrCodeHTML);
-            }, 1500);
+            }, 1000);
         }
 
 
