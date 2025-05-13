@@ -73,13 +73,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Save URL to local storage when input changes
     urlInput.addEventListener('input', () => {
-
-
-        // Save the current URL to local storage
         localStorage.setItem('lastGeneratedUrl', urlInput.value);
-
     });
 
+    // Add clear storage button functionality
+    const clearStorage = () => {
+        location.reload();
+        localStorage.removeItem('lastGeneratedUrl');
+        localStorage.removeItem('lastQRResult');
+    };
+
+    // Function to check if there's data to clear
+    const hasDataToClear = () => {
+        return localStorage.getItem('lastGeneratedUrl') || localStorage.getItem('lastQRResult');
+    };
+
+    // Function to update clear button visibility
+    const updateClearButtonVisibility = () => {
+        const clearBtn = document.querySelector('.clear-btn');
+        if (clearBtn) {
+            clearBtn.style.display = hasDataToClear() ? 'block' : 'none';
+        }
+    };
+
+    // Add clear button to the page
+    const clearBtn = document.createElement('button');
+    clearBtn.textContent = 'Clear History';
+    clearBtn.className = 'clear-btn';
+    clearBtn.onclick = clearStorage;
+    document.querySelector('.qr-form').appendChild(clearBtn);
+
+    // Initial check for button visibility
+    updateClearButtonVisibility();
+
+    // Update button visibility when input changes
+    urlInput.addEventListener('input', () => {
+        localStorage.setItem('lastGeneratedUrl', urlInput.value);
+        updateClearButtonVisibility();
+    });
+
+    // Update button visibility after generating QR code
     generateBtn.addEventListener('click', () => {
         const url = urlInput.value.trim();
 
@@ -101,25 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 qrResult.innerHTML = qrCodeHTML;
                 qrResult.classList.remove('loading');
                 localStorage.setItem('lastQRResult', qrCodeHTML);
+                updateClearButtonVisibility();
             }, 1000);
         }
-
-
     });
 
     // Download functionality has been removed
-
-    // Add clear storage button functionality
-    const clearStorage = () => {
-        location.reload();
-        localStorage.removeItem('lastGeneratedUrl');
-        localStorage.removeItem('lastQRResult');
-    };
-
-    // Add clear button to the page
-    const clearBtn = document.createElement('button');
-    clearBtn.textContent = 'Clear History';
-    clearBtn.className = 'clear-btn';
-    clearBtn.onclick = clearStorage;
-    document.querySelector('.qr-form').appendChild(clearBtn);
 }); 
